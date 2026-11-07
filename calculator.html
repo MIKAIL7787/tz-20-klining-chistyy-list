@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Калькулятор стоимости уборки — Чистый лист</title>
+  <meta name="description" content="Рассчитайте стоимость уборки: вид уборки, площадь, дополнительные услуги, частота. Цена сразу, без звонка менеджера.">
+  <meta property="og:title" content="Калькулятор стоимости уборки — Чистый лист">
+  <meta property="og:description" content="Вид уборки, площадь, доп. услуги, частота — цена за 10 секунд.">
+  <meta property="og:image" content="img/og.jpg">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo">Чистый <span>лист</span></a>
+    <button class="burger" aria-label="Меню" id="burger">☰</button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="calculator.html" class="active">Калькулятор</a>
+      <a href="subscription.html">Подписка</a>
+      <a href="office.html">Офисам</a>
+      <a href="tips.html">15 минут в день</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h1>Калькулятор стоимости</h1>
+    <p style="margin-bottom:28px;max-width:720px;">Выберите вид уборки и площадь, отметьте дополнительные услуги. Цена обновится сразу. Скидки акции и подписки не суммируются — применяется большая.</p>
+
+    <form class="form" id="calc-form" onsubmit="return false;">
+      <div class="field">
+        <label for="cleaning_type">Вид уборки</label>
+        <select id="cleaning_type" name="cleaning_type">
+          <option value="regular">Поддерживающая — 75 ₽/м² (мин. 3 000 ₽)</option>
+          <option value="deep">Генеральная — 160 ₽/м²</option>
+          <option value="after_repair">После ремонта — 220 ₽/м²</option>
+          <option value="windows">Мойка окон — 450 ₽ / створка</option>
+          <option value="upholstery">Химчистка дивана — от 2 500 ₽</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="area_m2">Площадь, м² (15–300)</label>
+        <input type="number" id="area_m2" name="area_m2" min="15" max="300" value="50" required>
+      </div>
+
+      <div class="field">
+        <label>Дополнительные услуги</label>
+        <label class="checkbox"><input type="checkbox" data-extra="oven" data-extra-name="oven" data-extra-price="700"> Духовка — 700 ₽</label>
+        <label class="checkbox"><input type="checkbox" data-extra="fridge" data-extra-name="fridge" data-extra-price="600"> Холодильник — 600 ₽</label>
+        <label class="checkbox"><input type="checkbox" data-extra="balcony" data-extra-name="balcony" data-extra-price="900"> Балкон — 900 ₽</label>
+        <label class="checkbox"><input type="checkbox" data-extra="ironing" data-extra-name="ironing" data-extra-price="600"> Глажка — 600 ₽/час</label>
+        <label class="checkbox"><input type="checkbox" data-extra="windows2" data-extra-name="windows2" data-extra-price="900"> Окно (2 створки) — 900 ₽</label>
+      </div>
+
+      <div class="field">
+        <label for="frequency">Частота</label>
+        <select id="frequency" name="frequency">
+          <option value="once">Разово</option>
+          <option value="weekly">Раз в неделю (−15 %)</option>
+          <option value="biweekly">Раз в 2 недели (−10 %)</option>
+        </select>
+      </div>
+
+      <div class="calc-result">
+        <div>Итого:</div>
+        <div class="calc-result__sum" id="total">—</div>
+        <div class="calc-result__note" id="total-note"></div>
+      </div>
+
+      <a href="contacts.html" class="btn btn--primary btn--block"
+         id="calc-order"
+         data-event="cta_click" data-button-name="calc_order" data-page-section="calculator">Заказать</a>
+    </form>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div><h4>Чистый лист</h4><p>Уборка квартир и офисов с 2022 года. 24 сотрудника, 8 бригад.</p></div>
+    <div>
+      <h4>Разделы</h4>
+      <a href="services.html">Услуги</a><br>
+      <a href="calculator.html">Калькулятор</a><br>
+      <a href="subscription.html">Подписка</a><br>
+      <a href="office.html">Уборка офисов</a>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <a href="tel:+74951234567" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a><br>
+      <a href="https://t.me/chisty_list_manager" target="_blank" rel="noopener" data-event="messenger_click" data-messenger="telegram" data-page-section="footer">Telegram</a><br>
+      <a href="https://wa.me/74951234567" target="_blank" rel="noopener" data-event="messenger_click" data-messenger="whatsapp" data-page-section="footer">WhatsApp</a><br>
+      <a href="https://instagram.com/" target="_blank" rel="noopener" data-event="social_click" data-network="instagram" data-page-section="footer">Instagram</a>
+    </div>
+  </div>
+  <div class="footer__bottom">© 2026 ООО «Чистый лист». Ежедневно 08:00–22:00. <a href="privacy.html" style="color:inherit;">Политика конфиденциальности</a></div>
+</footer>
+
+<script src="js/analytics.js"></script>
+<script src="js/form.js"></script>
+<script>
+  document.getElementById('burger').addEventListener('click',function(){document.getElementById('nav').classList.toggle('open');});
+
+  // ---------- Калькулятор ----------
+  (function(){
+    var PRICES = { regular: 75, deep: 160, after_repair: 220, windows: 450, upholstery: 2500 };
+    var MIN_SUM = 3000;
+    var form = document.getElementById('calc-form');
+    var totalEl = document.getElementById('total');
+    var noteEl = document.getElementById('total-note');
+    var typeEl = document.getElementById('cleaning_type');
+    var areaEl = document.getElementById('area_m2');
+    var freqEl = document.getElementById('frequency');
+
+    // Предзаполнение из ?type=
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('type') && PRICES[params.get('type')]) typeEl.value = params.get('type');
+
+    function calc() {
+      var type = typeEl.value;
+      var area = Math.max(15, Math.min(300, Number(areaEl.value) || 50));
+      var base = PRICES[type] * area;
+      if (type === 'regular' && base < MIN_SUM) base = MIN_SUM;
+      if (type === 'windows') base = PRICES.windows * area; // для окон area = кол-во створок
+      if (type === 'upholstery') base = PRICES.upholstery;
+
+      var extras = 0;
+      form.querySelectorAll('[data-extra]:checked').forEach(function(cb){
+        extras += Number(cb.getAttribute('data-extra-price'));
+      });
+      var subtotal = base + extras;
+
+      var discount = 0;
+      var note = '';
+      if (type === 'deep') { discount = 0.15; note = 'Акция «Генеральная −15 % до 15 декабря»'; }
+      if (freqEl.value === 'weekly') { discount = Math.max(discount, 0.15); note = 'Подписка: раз в неделю −15 %'; }
+      if (freqEl.value === 'biweekly') { discount = Math.max(discount, 0.10); note = 'Подписка: раз в 2 недели −10 %'; }
+
+      var total = Math.round(subtotal * (1 - discount));
+      totalEl.textContent = total.toLocaleString('ru-RU') + ' ₽';
+      noteEl.textContent = note;
+
+      // cleaning_calc
+      if (window.ChistyList) {
+        window.ChistyList.sendEvent('cleaning_calc', {
+          cleaning_type: type,
+          area_m2: area,
+          extras_count: form.querySelectorAll('[data-extra]:checked').length,
+          total_price: total
+        });
+      }
+
+      // сохраняем для формы
+      var order = {
+        cleaning_type: type,
+        area_m2: area,
+        frequency: freqEl.value,
+        total: total
+      };
+      sessionStorage.setItem('calc_order', JSON.stringify(order));
+
+      // ссылка на форму с параметрами
+      var url = 'contacts.html?type=' + encodeURIComponent(type) + '&area=' + area;
+      document.getElementById('calc-order').setAttribute('href', url);
+    }
+
+    form.addEventListener('change', calc);
+    form.addEventListener('input', calc);
+    form.querySelectorAll('[data-extra]').forEach(function(cb){
+      cb.addEventListener('change', function(){
+        if (cb.checked && window.ChistyList) {
+          window.ChistyList.sendEvent('extra_toggle', { extra_name: cb.getAttribute('data-extra-name') });
+        }
+      });
+    });
+
+    calc();
+  })();
+</script>
+</body>
+</html>
