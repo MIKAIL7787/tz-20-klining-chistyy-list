@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Чистый лист — уборка квартир и офисов в Москве</title>
+  <meta name="description" content="Уборка квартир, домов и офисов. Калькулятор стоимости, регулярная уборка по подписке со скидкой до 15 %, акция «Генеральная уборка к Новому году −15 %».">
+  <meta property="og:title" content="Чистый лист — уборка квартир и офисов">
+  <meta property="og:description" content="Рассчитайте стоимость уборки за минуту. Бригада со своими средствами, оплата после уборки.">
+  <meta property="og:image" content="https://ВАШ_САЙТ.vercel.app/img/og-cover.jpg">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+</head>
+<body>
+
+<header class="header">
+  <div class="container header__inner">
+    <a class="logo" href="index.html"><span class="logo__mark">ЧЛ</span>Чистый лист</a>
+    <button class="burger" aria-label="Меню" aria-expanded="false" data-burger><span></span><span></span><span></span></button>
+    <nav class="nav" data-nav>
+      <a href="index.html" aria-current="page">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="calculator.html">Калькулятор</a>
+      <a href="subscription.html">Подписка</a>
+      <a href="office.html">Офисам</a>
+      <a href="tips.html">15 минут в день</a>
+      <a href="contacts.html">Заказать</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Первый экран -->
+  <section class="hero container">
+    <div>
+      <span class="hero__badge">Уборка с 2022 года · 8 бригад · 600 уборок в месяц</span>
+      <h1>Уборка квартир и офисов без звонков и ожидания</h1>
+      <p>Рассчитайте стоимость за минуту, выберите дату и оставьте заявку. Бригада приезжает со своими средствами и инвентарём, оплата — после уборки.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="calculator.html"
+           data-event="cta_click" data-button-name="hero_calc" data-page-section="hero">Рассчитать стоимость</a>
+        <a class="btn btn--ghost" href="contacts.html"
+           data-event="cta_click" data-button-name="hero_order" data-page-section="hero">Оставить заявку</a>
+      </div>
+    </div>
+    <div class="hero__image">
+      <img src="img/hero.jpg" width="800" height="600" alt="Бригада «Чистого листа» убирает светлую квартиру" loading="eager">
+    </div>
+  </section>
+
+  <!-- Акция -->
+  <section class="container">
+    <div class="promo">
+      <div>
+        <h2>Генеральная уборка к Новому году −15 %</h2>
+        <p style="margin:0;opacity:.9">При заказе до 15 декабря 2026. Скидки не суммируются.</p>
+      </div>
+      <a class="btn btn--accent" href="calculator.html?type=deep"
+         data-event="cta_click" data-button-name="promo_newyear" data-page-section="promo">Рассчитать со скидкой</a>
+    </div>
+  </section>
+
+  <!-- Виды уборки -->
+  <section class="section container">
+    <h2 class="section__title">Виды уборки</h2>
+    <p class="section__lead">Нажмите на карточку, чтобы открыть калькулятор с выбранным видом уборки.</p>
+    <div class="grid grid--3">
+      <a class="card" href="calculator.html?type=regular"
+         data-event="service_view" data-cleaning-type="regular">
+        <h3>Поддерживающая</h3>
+        <p>Регулярная уборка квартиры: пыль, полы, санузел, кухня.</p>
+        <div class="card__price">75 ₽/м² · минимум 3 000 ₽</div>
+      </a>
+      <a class="card" href="calculator.html?type=deep"
+         data-event="service_view" data-cleaning-type="deep">
+        <h3>Генеральная</h3>
+        <p>Глубокая уборка всех комнат, включая труднодоступные места.</p>
+        <div class="card__price">160 ₽/м²</div>
+      </a>
+      <a class="card" href="calculator.html?type=after_repair"
+         data-event="service_view" data-cleaning-type="after_repair">
+        <h3>После ремонта</h3>
+        <p>Убираем строительную пыль, следы краски и клея.</p>
+        <div class="card__price">220 ₽/м²</div>
+      </a>
+      <a class="card" href="calculator.html?type=windows"
+         data-event="service_view" data-cleaning-type="windows">
+        <h3>Мойка окон</h3>
+        <p>Стёкла, рамы и подоконники. Считаем за створку.</p>
+        <div class="card__price">450 ₽ за створку</div>
+      </a>
+      <a class="card" href="calculator.html?type=upholstery"
+         data-event="service_view" data-cleaning-type="upholstery">
+        <h3>Химчистка дивана</h3>
+        <p>Выездная химчистка мягкой мебели.</p>
+        <div class="card__price">от 2 500 ₽</div>
+      </a>
+      <a class="card" href="office.html"
+         data-event="service_view" data-cleaning-type="office">
+        <h3>Уборка офисов</h3>
+        <p>По графику или разово. Условия — на отдельной странице.</p>
+        <div class="card__price">По запросу</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Что входит в уборку -->
+  <section class="section section--soft">
+    <div class="container">
+      <h2 class="section__title">Что входит в уборку</h2>
+      <p class="section__lead">Состав работ по комнатам. Нажмите на вопрос, чтобы раскрыть.</p>
+      <div class="faq">
+        <div class="faq__item">
+          <button class="faq__btn" data-faq-id="kitchen" aria-expanded="false">Кухня</button>
+          <div class="faq__body"><p>Протираем фасады, столешницу, фартук, вытяжку снаружи, мойку и смеситель. Убираем крошки и жир с плиты. Выносим мусор.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__btn" data-faq-id="bathroom" aria-expanded="false">Санузел</button>
+          <div class="faq__body"><p>Чистим плитку, сантехнику, зеркала и полотенцесушитель. Удаляем налёт с душевой кабины и кранов.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__btn" data-faq-id="rooms" aria-expanded="false">Комнаты</button>
+          <div class="faq__body"><p>Протираем пыль на открытых поверхностях и подоконниках, пылесосим ковры, моем полы. Аккуратно обходим личные вещи.</p></div>
+        </div>
+        <div class="faq__item">
+          <button class="faq__btn" data-faq-id="extra" aria-expanded="false">Дополнительно</button>
+          <div class="faq__body"><p>Духовка — 700 ₽, холодильник — 600 ₽, балкон — 900 ₽, глажка — 600 ₽/час, окно (2 створки) — 900 ₽. Можно добавить в калькуляторе.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Фото до и после -->
+  <section class="section container">
+    <h2 class="section__title">Фото до и после</h2>
+    <p class="section__lead">Результаты генеральной уборки. Нажмите на фото, чтобы рассмотреть.</p>
+    <div class="gallery">
+      <figure data-photo-index="1">
+        <img src="img/before-after-kitchen.jpg" width="800" height="600" alt="Кухня до и после генеральной уборки" loading="lazy">
+        <figcaption>Кухня</figcaption>
+      </figure>
+      <figure data-photo-index="2">
+        <img src="img/before-after-bath.jpg" width="800" height="600" alt="Санузел до и после уборки" loading="lazy">
+        <figcaption>Санузел</figcaption>
+      </figure>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="logo" style="color:#fff"><span class="logo__mark">ЧЛ</span>Чистый лист</div>
+        <p style="margin-top:12px">Уборка квартир, домов и офисов с 2022 года. Работаем ежедневно 08:00–22:00.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <ul>
+          <li><a href="services.html">Услуги</a></li>
+          <li><a href="calculator.html">Калькулятор</a></li>
+          <li><a href="subscription.html">Подписка</a></li>
+          <li><a href="contacts.html">Заказать</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <ul>
+          <li><a href="tel:+74950000000" data-event="contact_click" data-contact-type="phone">+7 (495) 000-00-00</a></li>
+          <li><a href="mailto:manager@chisty-list.example" data-event="contact_click" data-contact-type="email">manager@chisty-list.example</a></li>
+          <li><a href="privacy.html">Политика конфиденциальности</a></li>
+        </ul>
+        <div class="footer__socials">
+          <a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"
+             data-event="social_click" data-network="instagram" data-page-section="footer">IG</a>
+          <a href="https://vk.com/" target="_blank" rel="noopener" aria-label="ВКонтакте"
+             data-event="social_click" data-network="vk" data-page-section="footer">VK</a>
+          <a href="https://t.me/" target="_blank" rel="noopener" aria-label="Telegram"
+             data-event="social_click" data-network="telegram" data-page-section="footer">TG</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© 2026 ООО «Чистый лист»</span>
+      <span><a href="privacy.html">Политика конфиденциальности</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/analytics.js"></script>
+<script>
+  // мобильное меню
+  document.querySelector('[data-burger]').addEventListener('click', function () {
+    var nav = document.querySelector('[data-nav]');
+    var open = nav.classList.toggle('is-open');
+    this.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  // аккордеон
+  document.querySelectorAll('[data-faq-id]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var item = btn.parentElement;
+      var open = item.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+</script>
+</body>
+</html>
