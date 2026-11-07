@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Уборка офисов — Чистый лист</title>
+  <meta name="description" content="Обслуживание офисов по графику. Условия для компаний, расчёт и запрос предложения.">
+  <meta property="og:title" content="Уборка офисов — Чистый лист">
+  <meta property="og:description" content="Обслуживание офисов по графику. Запросите предложение.">
+  <meta property="og:image" content="img/og.jpg">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo">Чистый <span>лист</span></a>
+    <button class="burger" aria-label="Меню" id="burger">☰</button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="calculator.html">Калькулятор</a>
+      <a href="subscription.html">Подписка</a>
+      <a href="office.html" class="active">Офисам</a>
+      <a href="tips.html">15 минут в день</a>
+      <a href="contacts.html">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h1>Уборка офисов</h1>
+    <p style="margin-bottom:24px;max-width:760px;">Обслуживаем офисы по графику: утром до начала рабочего дня или вечером после. Работаем ежедневно 08:00–22:00. Цена — по запросу, зависит от площади, частоты и набора работ.</p>
+
+    <ul class="checklist" style="max-width:760px;margin-bottom:32px;">
+      <li>Ежедневная, 3 раза в неделю или раз в неделю</li>
+      <li>Мойка полов, протирка пыли, вынос мусора</li>
+      <li>Уборка кухни и санузлов</li>
+      <li>Мойка окон и стеклянных перегородок — по запросу</li>
+      <li>Расходные материалы привозим с собой</li>
+      <li>Оплата по договору, после оказания услуг</li>
+    </ul>
+
+    <a href="contacts.html?type=office" class="btn btn--primary"
+       data-event="cta_click" data-button-name="office_request" data-page-section="office">Запросить предложение</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div><h4>Чистый лист</h4><p>Уборка квартир и офисов с 2022 года. 24 сотрудника, 8 бригад.</p></div>
+    <div>
+      <h4>Разделы</h4>
+      <a href="services.html">Услуги</a><br>
+      <a href="calculator.html">Калькулятор</a><br>
+      <a href="subscription.html">Подписка</a><br>
+      <a href="office.html">Уборка офисов</a>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <a href="tel:+74951234567" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a><br>
+      <a href="https://t.me/chisty_list_manager" target="_blank" rel="noopener" data-event="messenger_click" data-messenger="telegram" data-page-section="footer">Telegram</a><br>
+      <a href="https://wa.me/74951234567" target="_blank" rel="noopener" data-event="messenger_click" data-messenger="whatsapp" data-page-section="footer">WhatsApp</a><br>
+      <a href="https://instagram.com/" target="_blank" rel="noopener" data-event="social_click" data-network="instagram" data-page-section="footer">Instagram</a>
+    </div>
+  </div>
+  <div class="footer__bottom">© 2026 ООО «Чистый лист». Ежедневно 08:00–22:00. <a href="privacy.html" style="color:inherit;">Политика конфиденциальности</a></div>
+</footer>
+
+<script src="js/analytics.js"></script>
+<script src="js/form.js"></script>
+<script>document.getElementById('burger').addEventListener('click',function(){document.getElementById('nav').classList.toggle('open');});</script>
+</body>
+</html>
