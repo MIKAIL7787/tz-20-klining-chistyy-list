@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Заказ уборки и контакты — Чистый лист</title>
+  <meta name="description" content="Оставьте заявку на уборку: выберите дату, время, вид уборки и площадь. Перезвоним и подтвердим. Оплата после уборки.">
+  <meta property="og:title" content="Заказ уборки — Чистый лист">
+  <meta property="og:description" content="Выберите дату и время, оставьте заявку. Оплата после уборки.">
+  <meta property="og:image" content="img/og.jpg">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+</head>
+<body>
+
+<header class="header">
+  <div class="header__inner">
+    <a href="index.html" class="logo">Чистый <span>лист</span></a>
+    <button class="burger" aria-label="Меню" id="burger">☰</button>
+    <nav class="nav" id="nav">
+      <a href="index.html">Главная</a>
+      <a href="services.html">Услуги</a>
+      <a href="calculator.html">Калькулятор</a>
+      <a href="subscription.html">Подписка</a>
+      <a href="office.html">Офисам</a>
+      <a href="tips.html">15 минут в день</a>
+      <a href="contacts.html" class="active">Контакты</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <h1>Заказ уборки</h1>
+    <p style="margin-bottom:24px;max-width:720px;">Заполните форму — перезвоним в течение рабочего дня, подтвердим дату и ответим на вопросы. Оплата после уборки.</p>
+
+    <form class="form" id="order-form" novalidate>
+      <div class="field" data-field="cleaning_type">
+        <label for="cleaning_type">Вид уборки</label>
+        <select id="cleaning_type" name="cleaning_type" required>
+          <option value="">Выберите</option>
+          <option value="regular">Поддерживающая</option>
+          <option value="deep">Генеральная</option>
+          <option value="after_repair">После ремонта</option>
+          <option value="windows">Мойка окон</option>
+          <option value="upholstery">Химчистка дивана</option>
+          <option value="office">Уборка офиса</option>
+        </select>
+        <div class="field__error"></div>
+      </div>
+
+      <div class="field" data-field="area_m2">
+        <label for="area_m2">Площадь, м² (15–300)</label>
+        <input type="number" id="area_m2" name="area_m2" min="15" max="300" required>
+        <div class="field__error"></div>
+      </div>
+
+      <div class="field" data-field="cleaning_date">
+        <label for="cleaning_date">Дата приезда</label>
+        <input type="date" id="cleaning_date" name="cleaning_date" required>
+        <div class="field__error"></div>
+      </div>
+
+      <div class="field" data-field="cleaning_time">
+        <label for="cleaning_time">Время приезда</label>
+        <select id="cleaning_time" name="cleaning_time" required>
+          <option value="">Выберите</option>
+          <option value="08:00">08:00</option>
+          <option value="11:00">11:00</option>
+          <option value="14:00">14:00</option>
+          <option value="17:00">17:00</option>
+        </select>
+        <div class="field__error"></div>
+      </div>
+
+      <div class="field" data-field="name">
+        <label for="name">Имя</label>
+        <input type="text" id="name" name="name" minlength="2" maxlength="60" required>
+        <div class="field__error"></div>
+      </div>
+
+      <div class="field" data-field="phone">
+        <label for="phone">Телефон</label>
+        <input type="tel" id="phone" name="phone" placeholder="+7XXXXXXXXXX" required>
+        <div class="field__error"></div>
+      </div>
+
+      <div class="field" data-field="email">
+        <label for="email">E-mail (необязательно)</label>
+        <input type="email" id="email" name="email">
+        <div class="field__error"></div>
+      </div>
+
+      <div class="field" data-field="address">
+        <label for="address">Адрес уборки (необязательно)</label>
+        <input type="text" id="address" name="address">
+        <div class="hint">Точный адрес менеджер уточнит по телефону. Ключи от квартиры и коды домофона через форму не принимаются.</div>
+      </div>
+
+      <div class="field" data-field="agree">
+        <label class="checkbox">
+          <input type="checkbox" id="agree" name="agree" required>
+          <span>Согласен на обработку персональных данных согласно <a href="privacy.html">политике конфиденциальности</a></span>
+        </label>
+        <div class="field__error"></div>
+      </div>
+
+      <button type="submit" class="btn btn--primary btn--block">Отправить заявку</button>
+    </form>
+
+    <div style="margin-top:40px;">
+      <h2>Контакты</h2>
+      <p><a href="tel:+74951234567" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a></p>
+      <p><a href="mailto:manager@chisty-list.example" data-event="contact_click" data-contact-type="email">manager@chisty-list.example</a></p>
+      <p>
+        <a href="https://t.me/chisty_list_manager" target="_blank" rel="noopener"
+           data-event="messenger_click" data-messenger="telegram" data-page-section="contacts">Telegram</a> ·
+        <a href="https://wa.me/74951234567" target="_blank" rel="noopener"
+           data-event="messenger_click" data-messenger="whatsapp" data-page-section="contacts">WhatsApp</a>
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer__inner">
+    <div><h4>Чистый лист</h4><p>Уборка квартир и офисов с 2022 года. 24 сотрудника, 8 бригад.</p></div>
+    <div>
+      <h4>Разделы</h4>
+      <a href="services.html">Услуги</a><br>
+      <a href="calculator.html">Калькулятор</a><br>
+      <a href="subscription.html">Подписка</a><br>
+      <a href="office.html">Уборка офисов</a>
+    </div>
+    <div>
+      <h4>Контакты</h4>
+      <a href="tel:+74951234567" data-event="contact_click" data-contact-type="phone">+7 (495) 123-45-67</a><br>
+      <a href="https://t.me/chisty_list_manager" target="_blank" rel="noopener" data-event="messenger_click" data-messenger="telegram" data-page-section="footer">Telegram</a><br>
+      <a href="https://wa.me/74951234567" target="_blank" rel="noopener" data-event="messenger_click" data-messenger="whatsapp" data-page-section="footer">WhatsApp</a><br>
+      <a href="https://instagram.com/" target="_blank" rel="noopener" data-event="social_click" data-network="instagram" data-page-section="footer">Instagram</a>
+    </div>
+  </div>
+  <div class="footer__bottom">© 2026 ООО «Чистый лист». Ежедневно 08:00–22:00. <a href="privacy.html" style="color:inherit;">Политика конфиденциальности</a></div>
+</footer>
+
+<script src="js/analytics.js"></script>
+<script src="js/form.js"></script>
+<script>
+  document.getElementById('burger').addEventListener('click',function(){document.getElementById('nav').classList.toggle('open');});
+
+  // Дата: 14 дней, начиная с завтрашнего
+  (function(){
+    var dateEl = document.getElementById('cleaning_date');
+    var today = new Date();
+    var min = new Date(today); min.setDate(min.getDate() + 1);
+    var max = new Date(today); max.setDate(max.getDate() + 14);
+    function fmt(d){ return d.toISOString().slice(0,10); }
+    dateEl.min = fmt(min);
+    dateEl.max = fmt(max);
+    dateEl.value = fmt(min);
+
+    // Предзаполнение из калькулятора
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('type')) document.getElementById('cleaning_type').value = params.get('type');
+    if (params.get('area')) document.getElementById('area_m2').value = params.get('area');
+    try {
+      var order = JSON.parse(sessionStorage.getItem('calc_order') || '{}');
+      if (order.cleaning_type && !params.get('type')) document.getElementById('cleaning_type').value = order.cleaning_type;
+      if (order.area_m2 && !params.get('area')) document.getElementById('area_m2').value = order.area_m2;
+    } catch(e){}
+  })();
+</script>
+</body>
+</html>
